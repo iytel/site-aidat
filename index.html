@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Site Aidat Sistemi</title>
+  
+  <!-- Mobil Tam Ekran ve Zoom Engelleme -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0d6efd">
+
+  <!-- Android Tam Ekran Uygulama Kimliği -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- iOS (iPhone) Tam Ekran Uygulama Ayarları -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Site Aidat">
+  <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/619/619034.png">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #f4f6f9;
+    }
+    
+    /* Google uyarı şeridini (26px) ekranın üst dışına iterek gizler */
+    iframe {
+      position: absolute;
+      top: -26px; 
+      left: 0;
+      width: 100%;
+      height: calc(100% + 26px);
+      border: none;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <iframe src="SENIN_GOOGLE_APPS_SCRIPT_LINKIN_BURAYA" allow="clipboard-read; clipboard-write"></iframe>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('sw.js');
+      });
+    }
+  </script>
+
+</body>
+</html>
